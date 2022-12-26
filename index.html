@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Gestionnaire de dépenses</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>Nouvelle dépense</ion-card-title>
+                            </ion-card-header>
+
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">Intitulé de la dépense</ion-label>
+                                    <ion-input id="intitule" type="text"></ion-input>
+
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Somme de la dépense</ion-label>
+                                    <ion-input id="somme" type="number"></ion-input>
+                                </ion-item>
+                                <div class="ion-margin-vertical ion-text-right">
+                                    <ion-button id="btn-add" color="danger" fill="outline"><ion-icon slot="end"
+                                            name="close-outline"></ion-icon>Effacer</ion-button>
+                                    <ion-button id="btn-effacer" color="success" fill="outline"><ion-icon
+                                            name="add-outline" slot="start"></ion-icon>Ajouter</ion-button>
+
+                                </div>
+
+
+                            </ion-card-content>
+                        </ion-card>
+                        <ion-list id="dep-list">
+
+                        </ion-list>
+                        <p>Total des dépenses : <span id="total">....</span></p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-content>
+    </ion-app>
+    <script src="script.js"></script>
+</body>
+
+</html>
