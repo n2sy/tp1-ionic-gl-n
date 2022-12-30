@@ -11,6 +11,11 @@ let total = 0;
 btnAdd.addEventListener('click', () => {
     let intituleValue = intitule.value;
     let sommeValue = somme.value;
+
+    if (intituleValue.trim().length == 0 || sommeValue.trim().length == 0) {
+        presentAlert();
+        return;
+    }
     console.log(intituleValue, sommeValue);
     const newLabel = document.createElement('ion-label');
     // newLabel.textContent = intituleValue + ' : ' + sommeValue + ' TND';
@@ -33,4 +38,27 @@ function clear() {
 
     intitule.value = '';
     somme.value = '';
+}
+
+async function presentAlert() {
+    const alert = document.createElement('ion-alert');
+    alert.header = 'Erreur';
+    alert.message = 'Vous devez remplir les deux champs';
+    alert.buttons = [
+        {
+            text: 'OK',
+            handler: () => {
+                console.log("OK");
+            }
+        },
+        {
+            text: 'Cancel',
+            handler: () => {
+                console.log("Cancel");
+            }
+        }
+    ];
+
+    document.body.appendChild(alert);
+    await alert.present();
 }
